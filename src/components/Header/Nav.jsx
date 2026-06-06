@@ -1,15 +1,34 @@
-import { Link } from "react-router";
-
+import { NavLink } from "react-router-dom";
+import "./Nav.css";
 const Nav = () => {
   const links = (
     <>
-      <Link to={'/'}>
-        <li className="m-2">Home</li>
-      </Link>
-      <Link to={'/about'}>
-        {" "}
-        <li className="m-2">About</li>
-      </Link>
+      <li className="px-5">
+        <NavLink
+          to="/"
+          className={({ isActive }) => (isActive ? "active-link" : "")}
+        >
+          Home
+        </NavLink>
+      </li>
+
+      <li  className="px-5">
+        <NavLink
+          to="/listedBooks"
+          className={({ isActive }) => (isActive ? "active-link" : "")}
+        >
+          Listed Books
+        </NavLink>
+      </li>
+
+      <li  className="px-5">
+        <NavLink
+          to="/pageRead"
+          className={({ isActive }) => (isActive ? "active-link" : "")}
+        >
+          Pages to Read
+        </NavLink>
+      </li>
     </>
   );
   return (
@@ -40,13 +59,19 @@ const Nav = () => {
             {links}
           </ul>
         </div>
-        <a className="text-xl btn btn-ghost">daisyUI</a>
+        <a className="text-xl btn btn-ghost">Book Vibe</a>
       </div>
       <div className="hidden navbar-center lg:flex">
         <ul className="px-1 menu menu-horizontal">{links}</ul>
       </div>
-      <div className="navbar-end">
-        <a className="btn">Button</a>
+      <div className="navbar-end gap-3">
+        <button className="btn bg-green-500 text-white hover:bg-green-600 border-none">
+          Sign In
+        </button>
+
+        <button className="btn bg-cyan-400 text-white hover:bg-cyan-500 border-none">
+          Sign Up
+        </button>
       </div>
     </div>
   );

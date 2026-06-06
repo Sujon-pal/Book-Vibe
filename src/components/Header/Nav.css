@@ -1,0 +1,7 @@
+.active-link {
+  border: 1px solid #23be0a;
+  color: #23be0a !important;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 8px 16px;
+}
